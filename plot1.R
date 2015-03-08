@@ -4,12 +4,13 @@ plot1 <- function(){
   # Load the data
   data <- loadData()
   
+  # Write to file. Create a PNG device that will be written to.
+  png("plot1.png", height=480, width=480, units="px")
+  
   # Create the plot, set the background color so it is not transparent
   par(bg="white")
   hist(data$Global_active_power, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="orangered")
   
-  # Write to file. Default size is 480 * 480
-  dev.copy(png, file = "plot1.png")
   # Close device
   dev.off()
   

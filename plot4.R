@@ -4,6 +4,9 @@ plot4 <- function(){
   # Load the data
   data <- loadData()
   
+  # Write to file. Create a PNG device that will be written to.
+  png("plot4.png", height=480, width=480, units="px")
+  
   # Set the background color so it is not transparent
   par(bg="white")
   # Set the grid to a 2 * 2 grid
@@ -21,13 +24,11 @@ plot4 <- function(){
     lines(data$dateTime, data$Sub_metering_1, col="black")
     lines(data$dateTime, data$Sub_metering_2, col="red")
     lines(data$dateTime, data$Sub_metering_3, col="blue")
-    legend("topright", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=1, lty=c(1,1,1))
+    legend("topright", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=1, lty=c(1,1,1), box.col = "white", inset=0.01)
     plot(data$dateTime, data$Global_reactive_power, pch=21,col="white" , xlab="datetime", ylab="Global_reactive_power")
     lines(data$dateTime, data$Global_reactive_power)
   })
   
-  # Write to file. Default size is 480 * 480
-  dev.copy(png, file = "plot4.png")
   # Close device
   dev.off()
   

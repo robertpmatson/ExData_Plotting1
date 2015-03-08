@@ -4,6 +4,9 @@ plot3 <- function(){
   # Load the data
   data <- loadData()
   
+  # Write to file. Create a PNG device that will be written to.
+  png("plot3.png", height=480, width=480, units="px")
+  
   # Create the plot, set the background color so it is not transparent
   par(bg="white")
   with(data, {
@@ -19,8 +22,6 @@ plot3 <- function(){
   
   legend("topright", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=1, lty=c(1,1,1))
   
-  # Write to file. Default size is 480 * 480
-  dev.copy(png, file = "plot3.png")
   # Close device
   dev.off()
 }
