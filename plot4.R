@@ -1,8 +1,12 @@
 plot4 <- function(){
   
+  source("loadData.R")
   # Load the data
   data <- loadData()
   
+  # Set the background color so it is not transparent
+  par(bg="white")
+  # Set the grid to a 2 * 2 grid
   par(mfrow = c(2, 2))
   
   # Create the plot
@@ -24,6 +28,7 @@ plot4 <- function(){
   
   # Write to file. Default size is 480 * 480
   dev.copy(png, file = "plot4.png")
+  # Close device
   dev.off()
   
 }
