@@ -9,12 +9,12 @@ plot3 <- function(){
   png("plot3.png", height=480, width=480, units="px")
   
   # Create the plot, set the background color so it is not transparent
+  # Note: Using with( data, { ... }) did not work without add data frame name so did not use
   par(bg="white")
-  with(data, {
-    plot(data$dateTime, data$Sub_metering_1, pch=21, col="white",xlab="",ylab="Energy sub metering")
-    points(data$dateTime, data$Sub_metering_2, pch=21,col="white" )
-    points(data$dateTime, data$Sub_metering_3,pch=21, col="white" )
-  })
+  plot(data$dateTime, data$Sub_metering_1, pch=21, col="white",xlab="",ylab="Energy sub metering")
+  points(data$dateTime, data$Sub_metering_2, pch=21,col="white" )
+  points(data$dateTime, data$Sub_metering_3,pch=21, col="white" )
+
   
   # Add lines
   lines(data$dateTime, data$Sub_metering_1, col="black")
