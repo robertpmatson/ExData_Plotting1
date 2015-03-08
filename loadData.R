@@ -1,8 +1,8 @@
 loadData <- function(){
   
-  # LIbrary used for date processing
+  # Library used for date processing
   library(lubridate)
-  # LIbrary used for data frame processing
+  # Library used for data frame processing
   library(dplyr)
 
   # Import all data as character. We cannot import numerics directly as numeric
@@ -12,7 +12,7 @@ loadData <- function(){
   # Read the data
   data <- read.table("exdata_data_household_power_consumption/household_power_consumption.txt", 
                      header=TRUE, sep=";", colClasses=cols)
-  # LOad as a table
+  # Load as a table
   data <- tbl_df(data)
   
   # Filter for the dates
