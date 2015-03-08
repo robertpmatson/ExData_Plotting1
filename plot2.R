@@ -1,5 +1,6 @@
 plot2 <- function(){
   
+  # Load the source for the loadData function
   source("loadData.R")
   # Load the data
   data <- loadData()

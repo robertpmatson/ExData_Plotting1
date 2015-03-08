@@ -1,5 +1,6 @@
 plot3 <- function(){
   
+  # Load the source for the loadData function
   source("loadData.R")
   # Load the data
   data <- loadData()
@@ -20,6 +21,7 @@ plot3 <- function(){
   lines(data$dateTime, data$Sub_metering_2, col="red")
   lines(data$dateTime, data$Sub_metering_3, col="blue")
   
+  # Add legend
   legend("topright", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=1, lty=c(1,1,1))
   
   # Close device
